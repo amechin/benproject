@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+
+    <div class="container d-flex justify-content-center">
+        <table class="table table-striped bg-white text-center w-50">
+            <thead>
+            <tr>
+                <th scope="col">Catégories</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in categories %}
+            <tr>
+                    <td><a href="{{ path('category', {'slug': category.slug}) }}">{{ category.name }}</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
